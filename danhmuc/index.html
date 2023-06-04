@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sản phẩm</title>
+	<style type="text/css">
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			max-width: 960px;
+			margin: 0 auto;
+		}
+
+		.category {
+			flex-basis: 30%;
+			background-color: #f2f2f2;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+
+		.category h3 {
+			margin: 0;
+		}
+
+		.products {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.product {
+			flex-basis: 30%;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+
+		.product h4 {
+			margin: 0;
+			font-size: 18px;
+			font-weight: normal;
+		}
+
+		.product p {
+			font-size: 14px;
+			color: #777;
+			margin: 10px 0;
+		}
+
+		.product .price {
+			font-size: 16px;
+			font-weight: bold;
+			color: #c00;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- danh sách các danh mục -->
+		<div class="category">
+			<h3>Điện thoại</h3>
+		</div>
+		<div class="category">
+			<h3>Máy tính bảng</h3>
+		</div>
+
+		<!-- danh sách sản phẩm -->
+		<div class="products">
+			<div class="product">
+				<h4>iPhone X</h4>
+				<p>Đây là một chiếc iPhone X</p>
+				<div class="price">21.000.000đ</div>
+			

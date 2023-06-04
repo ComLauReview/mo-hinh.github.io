@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiêu đề bài viết</title>
+	<link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./image/logo-by-PhAnnt.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <style>
+        body {
+	
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav li {
+	margin-left: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+main {
+	padding: 20px;
+}
+
+article {
+	margin: 20px 0;
+}
+
+h2 {
+	color: #333;
+	margin-bottom: 10px;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-size: 14px;
+}
+
+footer p {
+	margin: 0;
+}
+
+    </style>
+	<div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Trang Chủ</a>
+        
+        <a href="./blog//"><img src="data:image/png;base64,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" height='20'alt=""> BLOG</a>
+        <a href="https://zalo.me/0345142769"><img src="https://tse4.mm.bing.net/th?id=OIP.xK-WO8vqZgWXEIN6-NrlXQHaHa&pid=Api&P=0&h=180" height="20px" alt=""> Liên Hệ Hỗ Trợ</a>
+        <a href="https://comlaureview.github.io/banquantri/cv-banquantri/cv-hoaian/"><img src="https://tse2.mm.bing.net/th?id=OIP.2hEmbbsK2sJxFEx21fWYAgAAAA&pid=Api&P=0&h=180" height="20px" alt=""> Nguồn</a>
+      
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+              </a>
+          </div>
+        
+	
+	<main >
+		<article>
+            <div class="text" style="text-align:center ;">
+			<h2>Phổ Cập Và Update WEDSITE</h2>
+           
+			<p>Blog này Sinh Ra để làm gì?</p>
+            <br>
+            <img src="https://vi.playtry.net/apps/72/vi/thumb.jpg" alt="">
+            <br>
+			<p>Với Mục Tiêu Là Xây Dựng 1 Wedsite giúp người tiêu dùng An Tâm Khi Mua Thực Phẩm - Rõ Nguồn Gốc.</p>
+			<p>Cập Nhật Những Thông Tin Mới Nhất Để Mọi Người DÙng Đều Nhanh Chóng Nắm Được.</p>
+			<p>Hãy Cùng Đồng Hành Với WEdSITE nha MỌi Người!</p>
+            <img src="https://media.dolenglish.vn/PUBLIC/MEDIA/04b1b776-8241-4dc3-b689-213fa809871e.jpg" alt="">
+        </div>
+		</article>
+	</main>
+	
+	<footer>
+		<p>&copy; Phannt BLOG</p>
+	</footer>
+    <script>
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
+</body>
+</html>

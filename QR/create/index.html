@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create and Download QR Code</title>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+</head>
+<body>
+  <style>
+    
+
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(214, 233, 144);
+    }
+      .topnav {
+    background-color: #5a4141;
+    overflow: hidden;
+  }
+.topnav a {
+    float: left;
+    display: block;
+    color: #00ff4c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 1000;
+    
+  }
+  .topnav a:hover {
+    background-color: #00eeff;
+    color: black;
+  }
+  .topnav a.active {
+    background-color: #000000;
+    color: rgb(51, 255, 0);
+  }
+  .topnav .icon {
+    display: none;
+  }
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  .qr-container { display: flex;
+   flex-direction: row; 
+    align-items: center;
+     justify-content: center;
+      margin: 20px 0; }
+ #qr-image img {
+   max-width: 100%;
+    max-height: 100%;}
+    .btn {
+      font-weight: 1000;
+      font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
+.btn:active {
+  background-color: #0053a9;
+  transform: translateY(2px); /*thêm hiệu ứng thay đổi vị trí của button khi bấm*/
+}
+  </style>
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Trang Chủ</a>
+   
+    <a href="../blog/"><img src="https://www.creativefabrica.com/wp-content/uploads/2019/02/Online-shop-shopping-shop-logo-by-DEEMKA-STUDIO-3-580x406.jpg" height='20'alt=""> BLOG</a>
+    <a href="https://zalo.me/0345142769"><img src="https://tse4.mm.bing.net/th?id=OIP.xK-WO8vqZgWXEIN6-NrlXQHaHa&pid=Api&P=0&h=180" height="20px" alt=""> Liên Hệ Hỗ Trợ</a>
+    <a href="https://comlaureview.github.io/banquantri/cv-banquantri/cv-hoaian/"><img src="https://tse2.mm.bing.net/th?id=OIP.2hEmbbsK2sJxFEx21fWYAgAAAA&pid=Api&P=0&h=180" height="20px" alt=""> Nguồn</a>
+  
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+          </a>
+      </div>
+
+<div class='wrapper' style='text-align:center;'> 
+  <div id="AllBanners" style=" display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;">
+  <div id="primaryMainContainer" style="">
+ 
+    <div id="contentBanners" style="">
+        <!-- For Trending Now  -->
+            <div id="MainContainer" style="display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;">
+                    <div id="Heading-box" style=" display: grid;
+                    grid-template-columns: auto auto;
+                    border-left: 10px solid red;
+                    height: 12%;
+                    padding: 0 12px;
+                    align-items: center;">
+                        <div class="heading" style="color:red; font-size: 1.6em;
+                        
+                        font-weight: bold;"><a href="#home" style="color:red; text-decoration: none;">Trang Chủ <B style="color:white;">></B>TạoQR </div>
+                       
+                      </div>
+                    </div>
+      <div>
+     <h1 style="color:black; font-weight: 1000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Tạo ra mã QR và Tải. <b style="color:red"> Tại đây</b></h1>
+      <hr>
+      </div>
+
+      <div style="font-size: 2rem;"> 
+        <label for="qr-text">Ghi Đầu Đủ Link Sản Phẩm <b style="color:green">(Bao gồm: https://)</b>: </label> 
+        <br>
+        <input type="text" id="qr-text">
+        <br> 
+        <button onclick="generateQR()" class="btn">Tạo</button>
+        </div>
+
+        <br> 
+        <div>
+        <label for="qr-image" style="color:#050505; font-size: 2rem;">QR Code: </label>
+         <div id="qr-image" style="text-align: center; justify-content: center;"></div>
+         </div> 
+         
+         <br>
+          <div> 
+            <button onclick="downloadQR()" class="btn">Tải Mã QR</button>
+           </div> 
+          </div>
+
+
+
+
+
+           <script> 
+           function generateQR()
+        { var qrText = document.getElementById("qr-text").value;
+         var qr = new QRCode(document.getElementById("qr-image"), { width : 200, height : 200 , });
+          qr.makeCode(qrText); }
+          function downloadQR() {
+		var qrImage = document.getElementById("qr-image").getElementsByTagName("img")[0];
+		var downloadLink = document.createElement("a");
+		downloadLink.href = qrImage.src;
+		downloadLink.download = "qr_code.png";
+		document.body.appendChild(downloadLink);
+		downloadLink.click();
+		document.body.removeChild(downloadLink);
+	}
+
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+  $(".input_text").focus(function(){
+    $(this).prev('.fa').addclass('glowIcon')
+})
+$(".input_text").focusout(function(){
+    $(this).prev('.fa').removeclass('glowIcon')
+})
+</script>
+
+</body>
+</html>
